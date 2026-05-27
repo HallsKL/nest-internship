@@ -1,0 +1,88 @@
+/* ==========================================================================
+   1. Core Theme Utility Color Classes
+   ========================================================================== */
+.text-dark-navy {
+  color: #041935 !important;
+}
+
+.bg-dark-navy {
+  background-color: #041935 !important;
+}
+
+.accent-gold-text {
+  color: #ffc107 !important;
+  letter-spacing: 1.5px;
+}
+
+.text-light-muted {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* ==========================================================================
+   2. Minister Profile Card & Hover Physics
+   ========================================================================== */
+.minister-card {
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+  background-color: #ffffff;
+  border: 1px solid #e9ecef !important;
+}
+
+/* Elegant lift up and shadow drop on card hover */
+.minister-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(4, 25, 53, 0.12) !important;
+  border-color: rgba(4, 25, 53, 0.2) !important;
+}
+
+/* ==========================================================================
+   3. Portrait Image Frame Controls
+   ========================================================================== */
+.image-frame {
+  height: 260px; /* Fixed height for clean grid alignment */
+  overflow: hidden;
+  background-color: #f8f9fa !important;
+}
+
+.minister-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center; /* Focuses perfectly on the minister's face */
+  transition: transform 0.5s ease;
+}
+
+/* Smooth zoom effect on the picture when hovering over the card */
+.minister-card:hover .minister-img {
+  transform: scale(1.04);
+}
+
+/* ==========================================================================
+   4. Portfolio Badges & Typography Mini-Tweaks
+   ========================================================================== */
+.portfolio-badge {
+  font-size: 11px !important;
+  font-weight: 500;
+  color: #041935 !important;
+  background-color: rgba(4, 25, 53, 0.05) !important;
+  border: 1px solid rgba(4, 25, 53, 0.1) !important;
+  transition: all 0.2s ease;
+}
+
+/* Subtle highlight when interacting with a portfolio item */
+.portfolio-badge:hover {
+  background-color: #041935 !important;
+  color: #ffffff !important;
+}
+
+.constituency-badge {
+  font-size: 12px !important;
+  letter-spacing: 0.5px;
+  background-color: #041935;
+  color: #ffffff;
+}
+
+.icon-square {
+  width: 3rem;
+  height: 3rem;
+  background-color: rgba(4, 25, 53, 0.05) !important;
+}

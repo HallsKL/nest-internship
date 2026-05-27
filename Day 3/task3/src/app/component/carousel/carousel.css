@@ -1,0 +1,97 @@
+/* 1. Enforce a consistent height across all devices and prevent layout layout jumps */
+.carousel-item {
+    height: 500px; /* Adjust this value to fit your layout design */
+    min-height: 350px;
+    background-color: #1a1a1a; /* Dark fallback background while images load */
+}
+
+/* 2. Force images to perfectly fill the container without distorting stretching */
+.carousel-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 500px; /* Must match the .carousel-item height above */
+    object-fit: cover; /* Crops cleanly instead of squishing the aspect ratio */
+}
+
+/* 3. Add a soft dark overlay shadow behind text for guaranteed readability */
+.carousel-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 100%);
+    z-index: 1;
+}
+
+/* 4. Style and lift the captions above the dark gradient overlay */
+.carousel-caption {
+    z-index: 2;
+    bottom: 3rem;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.4); /* Extra glass-morphism backing for text protection */
+    border-radius: 8px;
+    backdrop-filter: blur(4px); /* Modern subtle blur effect behind text */
+}
+
+.carousel-caption h5 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+.carousel-caption p {
+    font-size: 1rem;
+    color: #f8f9fa;
+    margin-bottom: 0;
+}
+
+/* 5. Customize the navigation side-control buttons on hover */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 8%; /* Thinner hitboxes so they don't get in the way of content */
+    z-index: 3;
+    transition: all 0.3s ease;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background: rgba(255, 255, 255, 0.1); /* Soft visual feedback on hover */
+}
+
+/* 6. Modernize the bottom slide indicators (Dashes to Pill shapes) */
+.carousel-indicators [data-bs-target] {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%; /* Converts standard flat lines into neat circular dots */
+    margin-left: 6px;
+    margin-right: 6px;
+    background-color: #ffffff;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+    z-index: 3;
+}
+
+.carousel-indicators .active {
+    width: 28px; /* Expands dynamically to a sleek pill-shape when active */
+    border-radius: 6px;
+    opacity: 1;
+    background-color: #ffc107; /* Highlight color (Gold) */
+}
+
+/* Responsive adjustments for smaller screens (like mobile devices) */
+@media (max-width: 768px) {
+    .carousel-item, 
+    .carousel-item img {
+        height: 350px; /* Scales down gracefully on mobile displays */
+    }
+    
+    .carousel-caption h5 {
+        font-size: 1.3rem;
+    }
+}

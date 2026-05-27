@@ -1,0 +1,96 @@
+@if (minister) {
+<div class="container my-5 animate-fade-in">
+
+  <!-- Back Button -->
+  <div class="mb-4">
+    <a routerLink="/minister" class="btn btn-outline-dark-navy btn-sm fw-bold hover-lift px-3 py-2">
+      <i class="bi bi-arrow-left me-2"></i>Back to Cabinet Directory
+    </a>
+  </div>
+
+  <!-- Minister Profile Hero -->
+  <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-5 detail-hero-card"
+    [class.cm-hero]="minister.role === 'Chief Minister'">
+    <div class="row g-0 align-items-center">
+
+      <!-- Left: Image frame -->
+      <div class="col-md-5 col-lg-4">
+        <div class="image-frame-detail position-relative d-flex align-items-center justify-content-center bg-light">
+          @if (minister.image && !minister.hasImageError) {
+          <img [src]="minister.image" [alt]="minister.name" class="minister-detail-img"
+            (error)="onImageError($event, minister)">
+          } @else {
+          <div
+            class="fallback-avatar-container w-100 h-100 d-flex flex-column align-items-center justify-content-center text-white">
+            <div class="fallback-initials-detail">{{ getInitials(minister.name) }}</div>
+            <div class="fallback-subtitle-detail">{{ minister.constituency }} Constituency</div>
+          </div>
+          }
+          <span class="badge position-absolute top-0 end-0 m-3 constituency-badge shadow rounded-2 py-2 px-3 fs-7">
+            <i class="bi bi-geo-alt-fill me-1"></i>{{ minister.constituency }}
+          </span>
+        </div>
+      </div>
+
+      <!-- Right: Text details -->
+      <div class="col-md-7 col-lg-8 p-4 p-lg-5">
+        <span class="text-uppercase fw-bold tracking-wider accent-gold-text fs-6">Cabinet Profile</span>
+        <h1 class="fw-bold text-dark-navy mt-2 mb-2 display-6">{{ minister.name }}</h1>
+        <h4 class="text-muted fw-semibold mb-4 fs-5">{{ minister.role }}</h4>
+
+        <div class="d-flex flex-wrap gap-2 mb-4">
+          @for (dept of minister.portfolios; track dept) {
+          <span class="badge portfolio-badge-detail rounded-pill px-3 py-1.5 fs-7">
+            {{ dept }}
+          </span>
+          }
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Biography & Action Items -->
+  <div class="row g-4">
+
+    <!-- Biography Panel -->
+    <div class="col-lg-7">
+      <div class="card h-100 border-0 shadow-sm rounded-4 p-4 p-md-5">
+        <h3 class="fw-bold text-dark-navy mb-4 border-bottom pb-2">
+          <i class="bi bi-journal-text me-2"></i>Executive Biography
+        </h3>
+        <p class="text-muted lh-lg fs-6" style="text-align: justify;">
+          {{ minister.biography }}
+        </p>
+        <div class="mt-4 p-3 bg-light rounded-3 text-secondary border-start border-3 border-dark-navy">
+          <i class="bi bi-info-circle-fill me-2 text-dark-navy"></i>
+          <span class="small">Elected into office during the 2026 Kerala Legislative Assembly General Election
+            representing the UDF administration.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Action Plan Panel -->
+    <div class="col-lg-5">
+      <div class="card h-100 border-0 shadow-sm rounded-4 p-4 p-md-5">
+        <h3 class="fw-bold text-dark-navy mb-4 border-bottom pb-2">
+          <i class="bi bi-clipboard2-check me-2"></i>2026 Action Plan
+        </h3>
+        <p class="text-muted small mb-4">Core departmental goals and developmental objectives established for the
+          administrative term.</p>
+
+        <ul class="list-unstyled">
+          @for (item of minister.actionItems; track item) {
+          <li class="d-flex align-items-start mb-3">
+            <i class="bi bi-check-circle-fill text-success fs-5 me-3 mt-0.5"></i>
+            <span class="text-dark fs-6 lh-base">{{ item }}</span>
+          </li>
+          }
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+}

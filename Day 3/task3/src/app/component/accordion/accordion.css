@@ -1,0 +1,87 @@
+/* ==========================================================================
+   1. Base Accordion Container Wrap
+   ========================================================================== */
+.accordion {
+    --bs-accordion-border-radius: 12px; /* Smoother corner radiuses */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Soft, elegant background shadow */
+    border-radius: var(--bs-accordion-border-radius);
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   2. Individual Accordion Items
+   ========================================================================== */
+.accordion-item {
+    border: 1px solid #e9ecef;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    margin-bottom: 12px; /* Adds clean space separating individual cards */
+    border-radius: 12px !important; /* Force override flat stack edges */
+    overflow: hidden;
+}
+
+/* Subtle elevation popup highlight when an item is expanded */
+.accordion-item:has(.accordion-button:not(.collapsed)) {
+    border-color: #041935; /* Matches your core dark navy theme color */
+    box-shadow: 0 8px 24px rgba(4, 25, 53, 0.12);
+    transform: translateY(-2px); /* Lifts the card slightly off the screen grid */
+}
+
+/* ==========================================================================
+   3. The Accordion Header Button Trigger
+   ========================================================================== */
+.accordion-button {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #495057;
+    background-color: #ffffff;
+    padding: 1.25rem 1.5rem;
+    transition: all 0.25s ease;
+}
+
+/* Style overrides when the Accordion is OPEN/ACTIVE */
+.accordion-button:not(.collapsed) {
+    color: #041935; /* Navy shift for active title text */
+    background-color: rgba(4, 25, 53, 0.04); /* Light translucent navy accent fill */
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.08); /* Keeps separation line clear */
+}
+
+/* Clean hover feedback for unexpanded components */
+.accordion-button:hover {
+    background-color: #f8f9fa;
+    color: #212529;
+}
+.accordion-button:not(.collapsed):hover {
+    background-color: rgba(4, 25, 53, 0.08);
+    color: #041935;
+}
+
+/* Removes standard blue bounding outline rings on click */
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(4, 25, 53, 0.25);
+}
+
+/* ==========================================================================
+   4. Customizing the Expand/Collapse End Icon Indicator
+   ========================================================================== */
+.accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23495057'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    background-size: 1.15rem;
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Playful spring physics rotation */
+}
+
+/* Re-colors arrow dynamically to match your dark navy theme when active */
+.accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23041935'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+}
+
+/* ==========================================================================
+   5. Inner Panel Slide-Out Content Body Box
+   ========================================================================== */
+.accordion-body {
+    padding: 1.5rem;
+    background-color: #ffffff;
+    color: #6c757d;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}

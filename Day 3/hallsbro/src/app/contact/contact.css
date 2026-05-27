@@ -1,0 +1,18 @@
+/* Custom submit button styling matching your theme palette */
+.custom-submit-btn {
+  background-color: #041935 !important;
+  border-color: #041935 !important;
+  transition: all 0.2s ease-in-out;
+}
+
+.custom-submit-btn:hover {
+  background-color: #ffc107 !important; /* Transitions to your gold accent on hover */
+  border-color: #ffc107 !important;
+  color: #041935 !important;
+}
+
+/* Subtle focus effect on input fields */
+.form-control:focus {
+  border-color: #041935;
+  box-shadow: 0 0 0 0.25rem rgba(4, 25, 53, 0.15);
+}

@@ -1,0 +1,144 @@
+<div class="container my-5 animate-fade-in">
+  
+  <div class="text-center mb-5">
+    <span class="text-uppercase fw-bold tracking-wider accent-gold-text fs-6">Government of Kerala</span>
+    <h1 class="display-5 fw-bold text-dark-navy mt-2">Official Contact & Grievance Portal</h1>
+    <p class="text-muted lead max-w-600 mx-auto mt-3">
+      Get in touch with the core administrative offices or submit your queries and grievances directly to the administrative cell.
+    </p>
+  </div>
+
+  <div class="row g-5">
+    
+    <!-- Left Column: Official Directory -->
+    <div class="col-lg-6">
+      <h3 class="fw-bold text-dark-navy mb-4 border-bottom pb-2">
+        <i class="bi bi-telephone-outbound me-2 text-warning"></i>Official Directory
+      </h3>
+      
+      <div class="d-flex flex-column gap-4">
+        <!-- Chief Minister's Office (CMO) -->
+        <div class="card border-0 shadow-sm rounded-3 hover-lift border-start border-4 border-warning">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-center mb-3">
+              <span class="badge bg-warning-light text-warning rounded-circle p-2.5 me-3">
+                <i class="bi bi-person-badge fs-5"></i>
+              </span>
+              <div>
+                <h5 class="fw-bold mb-0 text-dark">Chief Minister's Office</h5>
+                <p class="small text-muted mb-0">Government Secretariat, Thiruvananthapuram</p>
+              </div>
+            </div>
+            <hr class="opacity-10 my-3">
+            <div class="fs-6 d-flex flex-column gap-2">
+              <div>
+                <i class="bi bi-telephone text-primary me-2"></i>
+                <a href="tel:+914712333812" class="text-decoration-none text-dark-navy fw-semibold">+91 471 2333812</a>
+              </div>
+              <div>
+                <i class="bi bi-envelope text-primary me-2"></i>
+                <a href="mailto:chiefminister@kerala.gov.in" class="text-decoration-none text-dark-navy fw-semibold">chiefminister@kerala.gov.in</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Government Secretariat -->
+        <div class="card border-0 shadow-sm rounded-3 hover-lift border-start border-4 border-primary">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-center mb-3">
+              <span class="badge bg-primary-light text-primary rounded-circle p-2.5 me-3">
+                <i class="bi bi-building fs-5"></i>
+              </span>
+              <div>
+                <h5 class="fw-bold mb-0 text-dark">Secretariat Office</h5>
+                <p class="small text-muted mb-0">Statue, Thiruvananthapuram, Pin - 695001</p>
+              </div>
+            </div>
+            <hr class="opacity-10 my-3">
+            <div class="fs-6 d-flex flex-column gap-2">
+              <div>
+                <i class="bi bi-telephone text-primary me-2"></i>
+                <a href="tel:+914712333474" class="text-decoration-none text-dark-navy fw-semibold">+91 471 2333474</a>
+              </div>
+              <div>
+                <i class="bi bi-envelope text-primary me-2"></i>
+                <a href="mailto:chiefsecretary@kerala.gov.in" class="text-decoration-none text-dark-navy fw-semibold">chiefsecretary@kerala.gov.in</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Citizen Helpline Call Center -->
+        <div class="card border-0 shadow-sm rounded-3 hover-lift border-start border-4 border-success">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-center mb-3">
+              <span class="badge bg-success-light text-success rounded-circle p-2.5 me-3">
+                <i class="bi bi-headset fs-5"></i>
+              </span>
+              <div>
+                <h5 class="fw-bold mb-0 text-dark">Grievance & Call Center</h5>
+                <p class="small text-muted mb-0">24/7 Citizen Toll-Free Public Portal</p>
+              </div>
+            </div>
+            <hr class="opacity-10 my-3">
+            <div class="fs-6 d-flex flex-column gap-2">
+              <div>
+                <i class="bi bi-telephone text-success me-2"></i>
+                <span class="fw-semibold text-dark-navy">Toll-Free (BSNL): </span>
+                <a href="tel:155300" class="text-decoration-none text-dark-navy fw-bold">155300</a>
+              </div>
+              <div>
+                <i class="bi bi-telephone-inbound text-success me-2"></i>
+                <span class="fw-semibold text-dark-navy">Alternative Hotline: </span>
+                <a href="tel:1076" class="text-decoration-none text-dark-navy fw-bold">1076</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Right Column: Grievance Submission Form -->
+    <div class="col-lg-6">
+      <h3 class="fw-bold text-dark-navy mb-4 border-bottom pb-2">
+        <i class="bi bi-envelope-paper me-2 text-warning"></i>Submit Grievance / Inquiry
+      </h3>
+      
+      <div class="card border-0 shadow-sm rounded-4 glass-card">
+        <div class="card-body p-4 p-md-5">
+          <p class="text-muted small mb-4">Have an administrative issue, suggestion, or direct query? Submit your details to the secretariat queue.</p>
+          
+          <form (submit)="$event.preventDefault()">
+            <div class="mb-3">
+              <label for="userName" class="form-label fw-semibold text-secondary">Full Name</label>
+              <div class="input-group">
+                <span class="input-group-text bg-white border-end-0 text-muted"><i class="bi bi-person"></i></span>
+                <input type="text" class="form-control border-start-0 ps-0 form-control-lg fs-6" id="userName" placeholder="John Doe" required>
+              </div>
+            </div>
+            
+            <div class="mb-3">
+              <label for="userEmail" class="form-label fw-semibold text-secondary">Email Address</label>
+              <div class="input-group">
+                <span class="input-group-text bg-white border-end-0 text-muted"><i class="bi bi-envelope"></i></span>
+                <input type="email" class="form-control border-start-0 ps-0 form-control-lg fs-6" id="userEmail" placeholder="name@example.com" required>
+              </div>
+            </div>
+            
+            <div class="mb-4">
+              <label for="userMessage" class="form-label fw-semibold text-secondary">Your Message / Grievance Details</label>
+              <textarea class="form-control fs-6" id="userMessage" rows="5" placeholder="Describe your request or department inquiry in detail..." required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-warning btn-lg w-100 fs-6 fw-bold shadow-sm text-dark-navy hover-lift">
+              <i class="bi bi-send-fill me-2"></i>Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

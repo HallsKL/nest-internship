@@ -1,0 +1,26 @@
+<div class="accordion" id="dynamicAccordionSystem">
+  @for (item of faqList; track item.id; let first = $first) {
+    <div class="accordion-item border-0 shadow-sm mb-3 rounded-3 overflow-hidden">
+      <h2 class="accordion-header">
+        <button class="accordion-button fw-bold text-dark fs-6" 
+                [class.collapsed]="!first" 
+                type="button" 
+                data-bs-toggle="collapse" 
+                [attr.data-bs-target]="'#' + item.id" 
+                [attr.aria-expanded]="first ? 'true' : 'false'" 
+                [attr.aria-controls]="item.id">
+          {{ item.title }}
+        </button>
+      </h2>
+      
+      <div [id]="item.id" 
+           class="accordion-collapse collapse" 
+           [class.show]="first"
+           data-bs-parent="#dynamicAccordionSystem">
+        <div class="accordion-body text-muted lh-base bg-white">
+          {{ item.content }}
+        </div>
+      </div>
+    </div>
+  }
+</div>

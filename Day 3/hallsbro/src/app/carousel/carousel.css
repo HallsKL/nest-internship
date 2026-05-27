@@ -1,0 +1,119 @@
+/* ==========================================================================
+   1. Carousel Layout & Aspect Ratio Control
+   ========================================================================== */
+.carousel-item {
+    position: relative; /* Safely anchors absolute overlays and images */
+    height: 500px;      /* Main desktop height constraint */
+    min-height: 350px;
+    background-color: #1a1a1a; /* Fallback color displayed while images load */
+}
+
+/* Forces images to perfectly fill the layout without squishing or distortion */
+.carousel-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;       /* Inherits parent container's height responsively */
+    object-fit: cover;  /* Crops the graphic cleanly instead of forcing stretch */
+}
+
+/* ==========================================================================
+   2. Readability Gradients & Overlays
+   ========================================================================== */
+/* Soft dark overlay mask to guarantee legibility over bright graphic spots */
+.carousel-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 100%);
+    z-index: 1;
+}
+
+/* Glassmorphism backing panel text wrapper */
+.carousel-caption {
+    z-index: 2;
+    bottom: 3rem;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.4); /* Backing protective layer */
+    border-radius: 8px;
+    backdrop-filter: blur(4px);    /* Modern browser background blurring blur */
+}
+
+.carousel-caption h5 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+.carousel-caption p {
+    font-size: 1rem;
+    color: #f8f9fa;
+    margin-bottom: 0;
+}
+
+/* ==========================================================================
+   3. Directional Navigation Side-Controls
+   ========================================================================== */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 8%; /* Narrows active hitboxes so text elements stay clickable */
+    z-index: 3;
+    transition: all 0.3s ease;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background: rgba(255, 255, 255, 0.1); /* Soft layout feedback highlight */
+}
+
+/* ==========================================================================
+   4. Bottom Slider Dots Indicator Customization
+   ========================================================================== */
+/* Converts flat lines into neat circular dots */
+.carousel-indicators [data-bs-target] {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%; 
+    margin-left: 6px;
+    margin-right: 6px;
+    background-color: #ffffff;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+    z-index: 3;
+}
+
+/* Expands dynamically to a sleek pill-shape when actively selected */
+.carousel-indicators .active {
+    width: 28px; 
+    border-radius: 6px;
+    opacity: 1;
+    background-color: #ffc107; /* Highlight color (Gold) */
+}
+
+/* ==========================================================================
+   5. Mobile Media Queries (Responsive Breakpoints)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .carousel-item {
+        height: 350px; /* Scales component height down safely for mobile displays */
+    }
+    
+    .carousel-caption h5 {
+        font-size: 1.3rem;
+    }
+    
+    .carousel-caption p {
+        font-size: 0.85rem;
+    }
+    
+    .carousel-caption {
+        bottom: 1.5rem;
+        padding: 1rem;
+    }
+}

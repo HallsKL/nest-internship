@@ -1,0 +1,23 @@
+/* Ensure the application layout spans the full height of the viewport */
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* Give your routed components some breathing room below the navbar */
+router-outlet + * {
+  display: block;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Make your navbar logo look proportional */
+.nav-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}

@@ -1,0 +1,38 @@
+/* Color Constants mapping to your core app design rules */
+.text-dark-navy {
+  color: #041935 !important;
+}
+
+.bg-dark-navy {
+  background-color: #041935 !important;
+}
+
+.accent-gold-text {
+  color: #ffc107 !important;
+  letter-spacing: 1.5px;
+}
+
+.text-light-muted {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Subtle elevation card animations on hover */
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(4, 25, 53, 0.08) !important;
+}
+
+/* Bootstrap Icon backing layouts */
+.icon-square {
+  width: 3rem;
+  height: 3rem;
+  background-color: rgba(4, 25, 53, 0.05) !important;
+}
+
+.bg-primary-light {
+  background-color: rgba(4, 25, 53, 0.08) !important;
+}
