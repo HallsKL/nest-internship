@@ -1,0 +1,11 @@
+/* Custom focus borders for form inputs */
+.form-control:focus {
+  border-color: #000000;
+  box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.1);
+}
+
+/* Subtle button interaction */
+.btn-dark:hover {
+  background-color: #212529;
+  border-color: #212529;
+}

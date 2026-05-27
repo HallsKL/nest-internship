@@ -1,0 +1,92 @@
+/* ==========================================================================
+   1. Navbar Container & Base Layout
+   ========================================================================== */
+.navbar {
+  background-color: #041935 !important; /* Dark navy background */
+  padding: 20px 50px !important;       /* INCREASED: Pushed from 10px to 20px for a taller look */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Added subtle shadow for premium depth */
+}
+
+/* Ensure the wrapper respects alignment */
+.container-fluid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ==========================================================================
+   2. Logo Control
+   ========================================================================== */
+.nav-logo {
+  height: 65px;       /* INCREASED: Pushed from 45px to 65px to scale up your brand icon */
+  width: auto;        /* Maintains aspect ratio */
+  object-fit: contain; 
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.nav-logo:hover {
+  transform: scale(1.03); /* Adds a subtle interactive pop when hovering over the logo */
+}
+
+/* ==========================================================================
+   3. Desktop Navigation Links
+   ========================================================================== */
+.navbar-nav {
+  gap: 35px; /* INCREASED: Pushed from 25px to 35px for cleaner spacing across widescreen monitors */
+}
+
+.navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.8) !important; /* Semi-transparent white */
+  font-weight: 600;
+  font-size: 16px;            /* INCREASED: Scaled up from 14px to 16px for better readability */
+  letter-spacing: 0.8px;      /* INCREASED: Slightly wider track for a more high-end feel */
+  text-transform: uppercase; /* Keeps navigation clean and standard */
+  transition: color 0.2s ease-in-out; /* Smooth hover transition */
+  padding-bottom: 6px !important;
+}
+
+/* Link Hover State */
+.navbar-nav .nav-link:hover {
+  color: #ffc107 !important; /* Changes to gold on hover */
+}
+
+/* Active Link State (The current page) */
+.navbar-nav .nav-link.active {
+  color: #ffffff !important;   /* Solid bold white */
+  border-bottom: 3px solid #ffc107; /* INCREASED: Thicker underline tracking tab identity */
+}
+
+/* ==========================================================================
+   4. Mobile Responsive Elements
+   ========================================================================== */
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  padding: 8px 12px !important;
+}
+
+.navbar-toggler-icon {
+  /* Forces the default black responsive icon to turn white */
+  filter: invert(1); 
+}
+
+/* Fix mobile alignment constraints */
+@media (max-width: 991px) {
+  .navbar {
+    padding: 15px 25px !important; /* Kept balanced on tablets/phones */
+  }
+  .nav-logo {
+    height: 50px; /* Scales down slightly on mobile so it doesn't take up the whole screen */
+  }
+  .navbar-nav {
+    gap: 12px;
+    padding-top: 20px;
+  }
+  .navbar-nav .nav-link {
+    font-size: 15px;
+  }
+  .navbar-nav .nav-link.active {
+    border-bottom: none; /* Removes underline on mobile layouts */
+    padding-left: 5px;
+  }
+}
