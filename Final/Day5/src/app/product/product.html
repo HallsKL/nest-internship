@@ -1,0 +1,41 @@
+<div class="container my-5">
+  <div class="text-center mb-5">
+    <h1 class="fw-bold text-dark">GOURMET MENU</h1>
+    <p class="text-muted">Premium culinary collections crafted by top-tier virtual kitchens.</p>
+    <div class="mx-auto mt-2 mb-4" style="width: 60px; height: 3px; background-color: #041935;"></div>
+  </div>
+
+  <div class="row justify-content-center mb-5 g-3">
+    <div class="col-md-6 col-lg-5">
+      <input type="text" class="form-control form-control-lg text-center rounded-pill shadow-sm border border-secondary-subtle" placeholder="Search dishes (e.g. Biryani, Kebabs, Curry)..." (input)="onSearch($event)">
+    </div>
+    <div class="col-md-3 col-lg-2">
+      <select class="form-select form-select-lg rounded-pill shadow-sm border border-secondary-subtle" (change)="onSort($event)">
+        <option value="">Sort by Price</option>
+        <option value="asc">Price: Low to High</option>
+        <option value="desc">Price: High to Low</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+    @for (dish of dishes; track dish.itemID) {
+      <div class="col">
+        <div class="card h-100 product-card border-0 shadow-sm" [routerLink]="['/products', dish.itemID]" style="cursor: pointer;">
+          <div class="image-container" style="height: 240px; background-color: #fff;">
+            <img [src]="dish.imageUrl" class="card-img-top w-100 h-100" style="object-fit: cover;" [alt]="dish.itemName">
+          </div>
+          <div class="card-body d-flex flex-column bg-light">
+            <span class="text-muted small fw-semibold text-uppercase tracking-wider mb-1">{{ dish.restaurantName }}</span>
+            <h6 class="fw-bold text-dark text-truncate mb-2">{{ dish.itemName }}</h6>
+            <p class="text-muted small text-truncate-2 flex-grow-1 mb-3">{{ dish.itemDescription }}</p>
+            <div class="d-flex justify-content-between align-items-center mt-auto pt-2 border-top">
+              <span class="fs-5 fw-bold text-success">₹{{ dish.itemPrice }}</span>
+              <button class="btn btn-dark btn-sm rounded-pill px-3">View Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>
